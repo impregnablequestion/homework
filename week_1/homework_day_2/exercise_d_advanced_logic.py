@@ -81,7 +81,7 @@ for number in numbers:
     if number == 13 or numbers[index-1] == 13:
         pass
     else:
-        total =+ number
+        total += number
     index += 1
 
 print(total)
