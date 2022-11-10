@@ -1,5 +1,3 @@
-get_tasks_by_status(tasks, True)
-
 def mark_task_complete(task):
     task["completed"] = True
 
