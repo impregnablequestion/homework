@@ -28,8 +28,8 @@ In `task_list.py` complete the following functions by replacing ```pass``` with 
 
 ```py
 ## Get a list of uncompleted tasks
-def get_uncompleted_tasks(list):
-    pass
+def get_uncompleted_tasks(example_list):
+    return ex
 
 ## Get a list of completed tasks
 def get_completed_tasks(list):
