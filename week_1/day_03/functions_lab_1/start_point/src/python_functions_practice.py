@@ -1,33 +1,31 @@
 def return_10():
     return 10
 
-def add(a, b):
+# def add(a, b):
     result = a + b
     return result
 
+def add(a, b):
+    return a + b
+
 def subtract(a, b):
-    result = a - b
-    return result
+    return a - b
+    
 
 def multiply(a, b):
-    result = a*b
-    return result
+    return a*b
 
 def divide(a, b):
-    result = a/b
-    return result
+    return a/b
 
 def length_of_string(string):
-    string_length=len(string)
-    return string_length
+    return len(string)
 
 def join_string(string_a, string_b):
-    joined_string = string_a + string_b
-    return joined_string
+    return string_a + string_b
 
 def add_string_as_number(a, b):
-    result= int(a) + int(b)
-    return result
+    return int(a) + int(b)
 
 def number_to_full_month_name(number):
     months = {1: "January",
@@ -43,8 +41,7 @@ def number_to_full_month_name(number):
         11: "November",
         12: "December",
         }
-    month_string = months[number]
-    return month_string
+    return months[number]
 
 def number_to_short_month_name(number):
     months = {1: "Jan",
@@ -60,19 +57,15 @@ def number_to_short_month_name(number):
         11: "Nov",
         12: "Dec",
         }
-    month_string = months[number]
-    return month_string
+    return months[number]
 
 def volume_of_cube(b):
-    result= b**3
-    return result
+    return b**3
 
 def reverse_string(example):
-    result = example[::-1]
-    return result
+    return example[::-1]
     
 def fahrenheit_to_celsius(fahrenheit):
-    celsius = ((fahrenheit - 32) * 5/9)
-    return celsius
+    return ((fahrenheit - 32) * 5/9)
 
 
