@@ -11,7 +11,6 @@ def add(a, b):
 def subtract(a, b):
     return a - b
     
-
 def multiply(a, b):
     return a*b
 
@@ -68,4 +67,6 @@ def reverse_string(example):
 def fahrenheit_to_celsius(fahrenheit):
     return ((fahrenheit - 32) * 5/9)
 
-
+def manipulate(num):
+    num += 10
+    print(num)
