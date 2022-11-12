@@ -1,10 +1,12 @@
 from modules.output import *
+from modules.input import *
 from data.task_list import *
 
 
 while (True):
-    print_menu()
+    print_menu() # ––– where is this function defined?
     option = input("Select an option 1, 2, 3, 4, 5, display (m)enu or (q)uit: ")
+    
     if (option.lower() == 'q'):
         break
     if option == '1':
@@ -14,8 +16,7 @@ while (True):
     elif option == '3':
         print_list(get_tasks_by_status(tasks, False))
     elif option == '4':
-        description = input("Enter task description to search for: ")
-        task = get_task_with_description(tasks, description)
+        get_task_from_description(description)
         if task is not None:
             mark_task_complete(task)
             print("Task marked complete")
