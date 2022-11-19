@@ -11,17 +11,24 @@ class TestRoom(unittest.TestCase):
         self.room2 = Room("Room 2", 8)
         self.room3 = Room("Room 3", 3)
         self.room4 = Room("Room 4", 4)
-        self.guest1 = Guest("Barney", 100.00, "Song 2")
-        self.guest2 = Guest("Craig", 200.00, "Creep")
-        self.guest3 = Guest("Steve", 175.00, "Eurodisco")
-        self.guest4 = Guest("Chris", 50.00, "The Fear")
-        self.guest5 = Guest("Natasha", 80.00, "Sweet Caroline")
-        self.guest6 = Guest("Mia", 90.00, "Shape of You")
+        self.guest1 = Guest("Barney", 100.00, self.song2)
+        self.guest2 = Guest("Craig", 200.00, self.song6)
+        self.guest3 = Guest("Steve", 175.00, self.song7)
+        self.guest4 = Guest("Chris", 50.00, self.song3)
+        self.guest5 = Guest("Natasha", 80.00, self.song8)
+        self.guest6 = Guest("Mia", 90.00, self.song9)
         self.guest_list = [self.guest1, self.guest2, self.guest3]
         self.guest_list2 = [self.guest4, self.guest5, self.guest6]
         self.song1 = Song("Crazy", "Patsy Cline")
         self.song2 = Song("Song 2", "Blur")
         self.song3 = Song("The Fear", "Lily Allen")
+        self.song4 = Song("Blue Water", "Sally Oldfield")
+        self.song5 = Song("Song 2", "Blur")
+        self.song6 = Song("Creep", "Radiohead")
+        self.song7 = Song("Eurodisco", "Bis")
+        self.song8 = Song("Sweet Caroline", "Neil Diamond")
+        self.song9 = Song("Shape of You", "Ed Sheeran")
+        self.song10 = Song("Gimme More", "Britney Spears")
         self.playlist = [self.song1, self.song2, self.song3]
 
 
@@ -92,8 +99,8 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(self.guest1.wallet, 89.00)
 
     def test_add_group_when_they_cant_afford(self):
-        self.brokeguest = Guest("Megan", 9.00, "Blue Water")
-        self.brokeguest2 = Guest("Sophie", 10.00, "Gimme More")
+        self.brokeguest = Guest("Megan", 9.00, self.song4)
+        self.brokeguest2 = Guest("Sophie", 10.00, self.song10)
         self.brokeguests = [self.brokeguest, self.brokeguest2]
         output = self.room1.populate_room(self.brokeguests)
         self.assertEqual(output, "Sorry, you need 3.0 to come in")
@@ -101,8 +108,9 @@ class TestRoom(unittest.TestCase):
     # def test_customer_cheers_when_favourite_song_is_in_room_playlist(self):
     #     self.room1.add_playlist(self.playlist)
     #     self.room1.add_individual(self.guest1)
-    #     output = self.room1.check_favourite_song()
+    #     output = self.room1.add_individual()
     #     self.assertEqual = (output, "Banger!!!")
+
         
     
         
