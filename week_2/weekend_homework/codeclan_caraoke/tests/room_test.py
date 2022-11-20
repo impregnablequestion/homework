@@ -124,7 +124,7 @@ class TestRoom(unittest.TestCase):
             "Berliner Pilsner": (3.80, 32),
             "Jupiler": (4.10, 48),
             "Pinot Noir": (4.30, 52),
-            "Grillo": (4.80, 40),
+            "Grillo": (4.80, 0),
             }
             )
 
@@ -152,6 +152,17 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(self.room1.bar["Flensburger"], (3.50, 24))
         self.assertEqual(self.room1.till, 11.00)
         self.assertEqual(output, "Sorry, you're 2.5 short")
+
+    def test_sell_drink_to_customer_when_drink_is_not_in_stock(self):
+        self.skintdave = Guest("Dave", 18.00, Song("Feel", "Robbie Williams"))
+        self.room1.add_individual(self.skintdave)
+        output = self.room1.sell_drink_to_customer(self.skintdave, "Grillo") 
+        self.assertEqual(7.00, self.skintdave.wallet)
+        self.assertEqual(self.room1.bar["Grillo"], (4.80, 0))
+        self.assertEqual(self.room1.till, 11.00)
+        self.assertEqual(output, "Sorry, the Grillo is out of stock")
+        
+
 
 
         

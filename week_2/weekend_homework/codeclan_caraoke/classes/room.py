@@ -14,7 +14,7 @@ class Room:
             "Berliner Pilsner": (3.80, 32),
             "Jupiler": (4.10, 48),
             "Pinot Noir": (4.30, 52),
-            "Grillo": (4.80, 40),
+            "Grillo": (4.80, 0),
         }
         self.till = 0
 
@@ -71,6 +71,8 @@ class Room:
         guest.wallet -= self.bar[drink][0]
 
     def sell_drink_to_customer(self, guest, drink):
+        if self.bar[drink][1] == 0:
+            return f"Sorry, the {drink} is out of stock"
         if guest.wallet < self.bar[drink][0]:
             return f"Sorry, you're {self.bar[drink][0] - guest.wallet} short"
         self.remove_drink(drink)
