@@ -68,14 +68,14 @@ class Room:
         self.bar[drink] = (stock_list[0], stock_list[1] - 1)
 
     def remove_money_from_customer_wallet(self, guest, drink):
-        drink = self.bar[drink]
-        guest.wallet -= drink[0]
+        guest.wallet -= self.bar[drink][0]
 
     def sell_drink_to_customer(self, guest, drink):
+        if guest.wallet < self.bar[drink][0]:
+            return f"Sorry, you're {self.bar[drink][0] - guest.wallet} short"
         self.remove_drink(drink)
         self.remove_money_from_customer_wallet(guest, drink)
-        drink = self.bar[drink]
-        self.till += drink[0]
+        self.till += self.bar[drink][0]
 
     
         

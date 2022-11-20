@@ -144,6 +144,16 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(self.room1.bar["Flensburger"], (3.50, 23))
         self.assertEqual(self.room1.till, 36.50)
 
+    def test_sell_drink_to_customer_when_customer_cant_afford(self):
+        self.skintdave = Guest("Dave", 12.00, Song("Feel", "Robbie Williams"))
+        self.room1.add_individual(self.skintdave)
+        output = self.room1.sell_drink_to_customer(self.skintdave, "Flensburger") 
+        self.assertEqual(1.00, self.skintdave.wallet)
+        self.assertEqual(self.room1.bar["Flensburger"], (3.50, 24))
+        self.assertEqual(self.room1.till, 11.00)
+        self.assertEqual(output, "Sorry, you're 2.5 short")
+
+
         
     
         
