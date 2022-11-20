@@ -118,6 +118,32 @@ class TestRoom(unittest.TestCase):
         output = self.room1.add_individual(self.guest6)
         self.assertEqual(output, None)
 
+    def test_room_has_bar(self):
+        self.assertEqual(self.room1.bar, {
+            "Flensburger": (3.50, 24),
+            "Berliner Pilsner": (3.80, 32),
+            "Jupiler": (4.10, 48),
+            "Pinot Noir": (4.30, 52),
+            "Grillo": (4.80, 40),
+            }
+            )
+
+    def test_remove_drink_from_bar(self):
+        self.room1.remove_drink("Flensburger")
+        self.assertEqual(self.room1.bar["Flensburger"], (3.50, 23))
+
+    def test_remove_money_from_customer_wallet(self):
+        self.room1.populate_room(self.guest_list)
+        self.room1.remove_money_from_customer_wallet(self.guest1, "Flensburger")
+        self.assertEqual(96.50, self.guest1.wallet)
+
+    def test_sell_drink_to_customer(self):
+        self.room1.populate_room(self.guest_list)
+        self.room1.sell_drink_to_customer(self.guest1, "Flensburger")
+        self.assertEqual(96.50, self.guest1.wallet)
+        self.assertEqual(self.room1.bar["Flensburger"], (3.50, 23))
+        self.assertEqual(self.room1.till, 36.50)
+
         
     
         

@@ -9,6 +9,14 @@ class Room:
         self.current_guests = []
         self.songs_available = []
         self.entry_fee = 11.00
+        self.bar = {
+            "Flensburger": (3.50, 24),
+            "Berliner Pilsner": (3.80, 32),
+            "Jupiler": (4.10, 48),
+            "Pinot Noir": (4.30, 52),
+            "Grillo": (4.80, 40),
+        }
+        self.till = 0
 
     def check_favourite_song(self):
         for guest in self.current_guests:
@@ -33,6 +41,7 @@ class Room:
 
         if len(self.current_guests) + len(guests) <= self.capacity:
             self.current_guests.extend(guests)
+            self.till += group_entry_fee
             return self.check_favourite_song()
         else:
             return "Sorry, we're at capacity right now"
@@ -43,6 +52,7 @@ class Room:
         if len(self.current_guests) < self.capacity:
             self.current_guests.append(guest) 
             guest.wallet -= self.entry_fee
+            self.till += self.entry_fee
             return self.check_favourite_song()  
         else:
             return "Sorry, we're at capacity right now"  
@@ -52,6 +62,23 @@ class Room:
 
     def remove_guest(self, guest):
         self.current_guests.remove(guest)
+
+    def remove_drink(self, drink):
+        stock_list = self.bar[drink]
+        self.bar[drink] = (stock_list[0], stock_list[1] - 1)
+
+    def remove_money_from_customer_wallet(self, guest, drink):
+        drink = self.bar[drink]
+        guest.wallet -= drink[0]
+
+    def sell_drink_to_customer(self, guest, drink):
+        self.remove_drink(drink)
+        self.remove_money_from_customer_wallet(guest, drink)
+        drink = self.bar[drink]
+        self.till += drink[0]
+
+    
+        
 
 
 
