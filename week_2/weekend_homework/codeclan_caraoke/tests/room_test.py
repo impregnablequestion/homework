@@ -35,7 +35,6 @@ class TestRoom(unittest.TestCase):
             self.song7, self.song8, self.song9, self.song10
         ]
 
-
     def test_room_has_room_id(self):
         self.assertEqual(self.room1.room_id, "Room 1")
 
