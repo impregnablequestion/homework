@@ -10,13 +10,10 @@ class Room:
         self.songs_available = []
         self.entry_fee = 11.00
 
-    # def check_favourite_song(self):
-    #     for guest in self.current_guests:
-    #         if guest.favourite_song in self.songs_available:
-    #             return guest.cheer()
-        
-        
-        # [guest.cheer() for guest in self.current_guest if guest favourite song is in songs available]
+    def check_favourite_song(self):
+        for guest in self.current_guests:
+            if guest.favourite_song in self.songs_available:
+                return guest.cheer()
     
     def add_song(self, song):
         self.songs_available.append(song)
@@ -36,6 +33,7 @@ class Room:
 
         if len(self.current_guests) + len(guests) <= self.capacity:
             self.current_guests.extend(guests)
+            return self.check_favourite_song()
         else:
             return "Sorry, we're at capacity right now"
 
@@ -44,11 +42,10 @@ class Room:
             return "Sorry, the entry fee is ELEVEN pounds"
         if len(self.current_guests) < self.capacity:
             self.current_guests.append(guest) 
-            guest.wallet -= self.entry_fee  
+            guest.wallet -= self.entry_fee
+            return self.check_favourite_song()  
         else:
             return "Sorry, we're at capacity right now"  
-
-        
 
     def empty_room(self):
         self.current_guests.clear()
