@@ -20,3 +20,5 @@ class TestGuest(unittest.TestCase):
     def test_cheer_function(self):
         output = self.guest1.cheer()
         self.assertEqual(output, "Banger!!!")
+
+  

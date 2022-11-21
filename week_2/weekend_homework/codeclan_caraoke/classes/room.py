@@ -25,9 +25,11 @@ class Room:
     
     def add_song(self, song):
         self.songs_available.append(song)
+        return self.check_favourite_song
 
     def add_playlist(self, songs):
         self.songs_available.extend(songs)
+        return self.check_favourite_song
 
     def populate_room(self, guests):
         total_wallet = 0
