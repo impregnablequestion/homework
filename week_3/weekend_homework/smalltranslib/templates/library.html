@@ -4,7 +4,7 @@
     <ul>
         {% for book in library %}
             <li>
-                <a href="/library/placeholder/">{{ book.title }} - {{ book.author}}</a>   
+                <a href="/library/{{loop.index0}}">{{ book.title }} - {{ book.author}}</a>   
             </li>
             <li>
                 genre: {{ book.genre }}

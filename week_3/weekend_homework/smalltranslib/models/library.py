@@ -10,5 +10,14 @@ book7 = Book("Confessions of the Fox", "Jordy Rosenberg", "Historical Fiction", 
 
 book_list = [book1, book2, book3, book4, book5, book6, book7]
 
+def get_book(index):
+    return book_list[index]
+
 def add_book(book):
     book_list.append(book)
+
+def remove_book(book):
+    book_list.remove(book)
+
+def update_checked_in(book):
+    book.checked_out = not book.checked_out

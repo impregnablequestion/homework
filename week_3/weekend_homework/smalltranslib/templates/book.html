@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>{{ book.title }}</h2>
+    <ul>
+        <li>title: {{ book.title }}</li>
+        <li>author: {{ book.author }}</li>
+        <li>genre: {{ book.genre }}</li>
+        <li>checked out:{% if book.checked_out %}
+                yes 
+                <form id="check in" action="/library/update/{{ book.title }}" method="post">
+                    <input type="submit" value="return book">
+                </form>
+                {% else %}
+                no
+                <form id="check out" action="/library/update/{{ book.title }}" method="post">
+                    <input type="submit" value="check out">  
+                {% endif %}
+        </li>
+
+    </form>
+    <form id="delete_form" action="/library/delete/{{ book.title }}" method="post">
+        <input type="submit" value="remove book from collection">  
+    </form>
+    </ul>
+{% endblock %}
