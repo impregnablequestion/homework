@@ -10,7 +10,11 @@
                 genre: {{ book.genre }}
             </li>
             <li>
-                checked out: {{ book.checked_out }}
+                checked out:    {% if book.checked_out %}
+                    yes 
+                    {% else %}
+                    no      
+                {% endif %}
             </li>
         {% endfor %}
     </ul>

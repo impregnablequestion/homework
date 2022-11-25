@@ -9,3 +9,6 @@ book6 = Book("Detransition Baby", "Torrey Peters", "Fiction", False)
 book7 = Book("Confessions of the Fox", "Jordy Rosenberg", "Historical Fiction", True)
 
 book_list = [book1, book2, book3, book4, book5, book6, book7]
+
+def add_book(book):
+    book_list.append(book)

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>submit a book to donate</h2>
+    <form id="donate_form" action="/library/" method="post">
+        <label for="book_name">name</label>
+        <input type="text" name="book_name" id="book_name">
+        <label for="book_author">author</label>
+        <input type="text" name="book_author" id="book_author">
+        <label for="book_genre">genre</label>
+        <input type="text" name="book_genre" id="book_genre">
+        <input type="submit" value="donate book">
+    </form>
+{% endblock %}
