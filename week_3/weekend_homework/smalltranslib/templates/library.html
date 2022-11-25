@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>library</h2>
+    <ul>
+        {% for book in library %}
+            <li>
+                <a href="/library/placeholder/">{{ book.title }} - {{ book.author}}</a>   
+            </li>
+            <li>
+                genre: {{ book.genre }}
+            </li>
+            <li>
+                checked out: {{ book.checked_out }}
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
