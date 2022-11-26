@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+<article id="book_body">
     <h2>{{ book.title }}</h2>
     <ul>
         <li>title: {{ book.title }}</li>
@@ -22,4 +23,5 @@
         <input type="submit" value="remove book from collection">  
     </form>
     </ul>
+</article>
 {% endblock %}

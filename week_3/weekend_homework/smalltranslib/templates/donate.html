@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+<article id="donate">
     <h2>submit a book to donate</h2>
     <form id="donate_form" action="/library/" method="post">
         <label for="book_name">name</label>
@@ -10,4 +11,5 @@
         <input type="text" name="book_genre" id="book_genre">
         <input type="submit" value="donate book">
     </form>
+</article>
 {% endblock %}

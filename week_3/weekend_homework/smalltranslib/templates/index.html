@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h2>small trans library online</h2>
-    <article>
+    <article id="home">
+        <h2>small trans library online</h2>
         <h3>
             about us
         </h3>
@@ -10,6 +10,12 @@
             with branches in Dublin and Glasgow. As well as sharing our catalogue of 400+ LGBT books, 
             we also regularly host reading groups, writing workshops and community events for trans people in Ireland and Scotland.
         </p>
+        <aside>
+            <h3>book of the day</h3>
+            <a href="/library/{{ book.title }}">
+                <img src="{{ book.thumbnail_url}}" alt="{{ book.title }} - {{ book.author }}">
+            </a>
+        </aside>
         <h3>
             how to use the library
         </h3>
@@ -42,8 +48,4 @@
             Contact us for a shipping address.
         </p>
     </article>
-    <aside>
-        <h3>book of the day</h3>
-        <img src="{{ book.thumbnail_url}}" alt="{{ book.title }} - {{ book.author }}">
-    </aside>
 {% endblock %}

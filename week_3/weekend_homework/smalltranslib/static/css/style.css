@@ -1,82 +1,117 @@
-/* body {
+body {
     font-family: "Quicksand", sans-serif;
     background-image: url("https://nialltl.neocities.org/clang.jpg");
-    background-attachment: scroll;
+    background-blend-mode: hue;
+    background-attachment:fixed;
+}
+
+h1 {
+    text-align:center;
+    color: white;
+    padding: 2rem
+}
+
+h2 {
+    text-align:center
 }
 
 header {
-    background-color: rebeccapurple;
-    opacity: 0.6;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin: 1rem;
-    padding: 2rem;
+    background-color: rgb(62, 27, 27, 0.9);
+    margin: 1rem 20rem;
+    padding: 1rem;
+    border-radius: 20px
+
+}
+
+#home {
     color: white;
+    background-color: rgb(25, 25, 112, 0.9);
+    opacity: 0.9;
+    padding: 2rem;
+    margin: 2rem 15rem;
     border-radius: 20px;
+}
+
+#library {
+    color: white;
+    background-color: rgb(25, 25, 112, 0.8);
+    padding: 2rem;
+    margin: 2rem 5rem;
+    border-radius: 20px;
+}
+
+#book_body {
+    color: white;
+    background-color: rgb(25, 25, 112, 0.8);
+    padding: 2rem;
+    margin: 2rem 5rem;
+    border-radius: 20px;
+}
+
+#donate {
+    color: white;
+    background-color: rgb(25, 25, 112, 0.8);
+    padding: 2rem;
+    margin: 2rem 5rem;
+    border-radius: 20px;
+}
+
+form {
     
 }
 
-main {
-    background-color: aqua;
-    opacity: 0.75;
-    margin: 4rem;
-    padding: 1rem 4rem 2rem 4rem;
-    border-radius: 4rem
-}
-
-main > h2 {
-    text-align: center;
-    font-weight: bold;
-}
 
 footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 80%;
-    background-color:rebeccapurple;
-    opacity: 0.7;
-    margin: 1rem 15em 1rem;
-    
+    color: white;
+    background-color: midnightblue;
+    margin: 1rem 20rem
+}
+
+aside {
+    float: right;
+    margin: 2rem
+}
+
+img {
+    width: 236px;
+    border-radius: 10px;
+}
+
+#librarygrid {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: space-evenly
+}
+
+ul {
+    list-style: none;
+}
+
+.grid_item {
+    padding: 3rem;
+    background-color: black;
+}
+
+.grid_item > li{
+    background-color: white;
 }
 
 a {
     text-decoration: none;
+    color: white
 }
 
 a:hover {
     text-decoration: underline;
-    cursor:pointer
 }
 
-.navigationbar > ul {
-    list-style: none;
-    padding: 4rem;
+nav > ul {
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
-    font-size: large;
-    color: white
-}
-
-.navigationbar > ul > li{
-    text-decoration: none;
-    color: white
-}
-
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    color: white;
-    text-align: center;
-}
-
-#donateform {
-    text-align: center;
-    display: flex;
     justify-content: center;
-} */
+    gap: 2rem
+}
+
+nav > ul > li > a{
+    text-decoration: none
+}

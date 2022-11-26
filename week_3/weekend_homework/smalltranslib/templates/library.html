@@ -1,23 +1,28 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h2>library</h2>
-    <ul>
-        {% for book in library %}
-            <li><img src="{{ book.thumbnail_url}}" alt="{{ book.title }} - {{ book.author }}"></li>
-            <li>
-                <a href="/library/{{loop.index0}}">{{ book.title }} - {{ book.author}}</a>   
-            </li>
-            <li>
-                genre: {{ book.genre }}
-            </li>
-            <li>
-                checked out:    {% if book.checked_out %}
-                    yes 
-                    {% else %}
-                    no      
-                {% endif %}
-            </li>
-        {% endfor %}
-    </ul>
-
+    <article id="library">
+        <h2>library</h2>
+        <ul id="librarygrid">
+            {% for book in library %}
+            <div class="grid-item">
+                <li>
+                    <a href="/library/{{loop.index0}}"><img src="{{ book.thumbnail_url}}" alt="{{ book.title }} - {{ book.author }}"></a>
+                </li>
+                <!-- <li>
+                    <a href="/library/{{loop.index0}}">{{ book.title }} - {{ book.author}}</a>   
+                </li>
+                <li>
+                    genre: {{ book.genre }}
+                </li> -->
+                <li>
+                    checked out:    {% if book.checked_out %}
+                        yes 
+                        {% else %}
+                        no      
+                    {% endif %}
+                </li>
+            </div>
+            {% endfor %}
+        </ul>
+    </article>
 {% endblock %}
