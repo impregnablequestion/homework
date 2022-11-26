@@ -8,17 +8,10 @@
                 <li>
                     <a href="/library/{{loop.index0}}"><img src="{{ book.thumbnail_url}}" alt="{{ book.title }} - {{ book.author }}"></a>
                 </li>
-                <!-- <li>
-                    <a href="/library/{{loop.index0}}">{{ book.title }} - {{ book.author}}</a>   
-                </li>
-                <li>
-                    genre: {{ book.genre }}
-                </li> -->
                 <li>
                     checked out:    {% if book.checked_out %}
-                        yes 
-                        {% else %}
-                        no      
+                        &#9745; 
+                        {% else %}       
                     {% endif %}
                 </li>
             </div>
