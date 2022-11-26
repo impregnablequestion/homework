@@ -36,12 +36,12 @@ class TestBook(unittest.TestCase):
 
     def test_add_book_to_list(self):
         add_book(self.book7)
-        output = get_book(6)
+        output = book_list[14]
         self.assertEqual(output.title, self.book7.title)
 
     def test_remove_book_from_list(self):
         remove_book(book1)
-        self.assertEqual(len(book_list), 7)
+        self.assertEqual(len(book_list), 14)
 
     def test_update_checked_in(self):
         update_checked_in(self.book1)
