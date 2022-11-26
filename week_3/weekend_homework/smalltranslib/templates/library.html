@@ -3,6 +3,7 @@
     <h2>library</h2>
     <ul>
         {% for book in library %}
+            <li><img src="{{ book.thumbnail_url}}" alt="{{ book.title }} - {{ book.author }}"></li>
             <li>
                 <a href="/library/{{loop.index0}}">{{ book.title }} - {{ book.author}}</a>   
             </li>

@@ -2,10 +2,12 @@ from flask import render_template, redirect, request
 from app import app
 from models.library import book_list, get_book, add_book, remove_book, update_checked_in
 from models.book import Book
+import random
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    random_book = random.choice(book_list)
+    return render_template("index.html", book = random_book)
 
 @app.route('/library/')
 def library():

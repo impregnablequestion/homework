@@ -1,4 +1,49 @@
 {% extends 'base.html' %}
 {% block content %}
     <h2>small trans library online</h2>
+    <article>
+        <h3>
+            about us
+        </h3>
+        <p>
+            The Small Trans Library is a small lending library of trans-authored books for trans people, 
+            with branches in Dublin and Glasgow. As well as sharing our catalogue of 400+ LGBT books, 
+            we also regularly host reading groups, writing workshops and community events for trans people in Ireland and Scotland.
+        </p>
+        <h3>
+            how to use the library
+        </h3>
+        <p>
+            To use the library, simply browse your local catalogue from the menu above and find a book you’d like to borrow. We’ll also happily give recommendations if you get in touch. 
+            Once you have your book(s) picked, contact your branch with your request via e-mail, Twitter, Instagram or the contact form below.
+            If a book is currently out on loan, we’ll be happy to put a hold on it for you. Rare books can only be read on site due to their fragility.
+        </p>
+        <p>
+            Your book can then be posted anywhere in Ireland or the UK, or picked up in person by coming to an event or meeting one of our librarians in Dublin or Glasgow.
+        </p>
+        <p>
+            Returns are flexible and there are no fines! You are welcome to borrow a book for as long as you want or until we receive another request for the same book.
+            When you are done with a book, simply contact us and we will find a means of return that suits you.
+            If you want to return a book by post, we can always cover the cost of shipping so the library remains totally free to use.
+        </p>
+        <h3>
+            donate
+        </h3>
+        <p>
+            The Small Trans Library is a community resource, run by volunteers and supported by your donations.
+        </p>
+        <p>
+            If you would like to support us financially:
+            The Dublin branch accepts one-time donations via Paypal and Ko-fi and recurring donations via Patreon.
+            The Glasgow branch accepts donations via Paypal and Patreon.
+        </p>
+        <p>
+            If you would like to donate a book to our collection, please feel free to browse the branches’ wishlists linked under the Catalogues & Wishlists tab.
+            Contact us for a shipping address.
+        </p>
+    </article>
+    <aside>
+        <h3>book of the day</h3>
+        <img src="{{ book.thumbnail_url}}" alt="{{ book.title }} - {{ book.author }}">
+    </aside>
 {% endblock %}
