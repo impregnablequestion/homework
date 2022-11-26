@@ -95,6 +95,10 @@ img {
     border-radius: 10px;
 }
 
+img:hover {
+    filter: invert(100%);
+}
+
 #librarygrid {
     display: grid;
     gap: 2rem;
