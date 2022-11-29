@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    <form id = "player_1" action="/submitplayer1/" method="post">
+        <input type="text" placeholder="player 1" name="p1_name" id="p1_name">
+        <button type="submit" value="rock">rock</button>
+        <button type="submit" value="paper">paper</button>
+        <button type="submit" value="scissors">scissors</button>
+    </form>
+    <form id = "player_2" action="/submitplayer2/" method="post">
+        <input type="text" placeholder="player 2" name="p2_name" id="p2_name">
+        <button type="submit" value="rock">rock</button>
+        <button type="submit" value="paper">paper</button>
+        <button type="submit" value="scissors">scissors</button>
+    </form>
+{% endblock %}
