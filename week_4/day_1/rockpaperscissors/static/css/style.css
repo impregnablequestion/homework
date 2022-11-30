@@ -1,10 +1,18 @@
 * {
-    background-color: darkslategray;
+    background-color: rgb(47, 79, 79, 0.7);
     color: white;
     text-align: center;
     padding: 5rem;
+    filter:blur(0.5px)
 }
 
-/* header {
-    padding: 5rem
-} */
+body {
+    background-image: url(https://memimemimemi.neocities.org/imagehosting/DALL·E%202022-11-30%2000.09.34%20-%20shrek%20and%20donkey%20playing%20rock%20paper%20scissors.png) ;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    gap: 4 rem;
+    filter: blur(0)
+}

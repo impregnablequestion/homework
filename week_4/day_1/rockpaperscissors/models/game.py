@@ -29,13 +29,15 @@ class Game:
         p2choice = self.player_2.choice
     
         if result == 1:
-            return f"{p1name} ({p1choice}) beats {p2name} ({p2choice})"
+            return f"you win!! {p1name} ({p1choice}) beats {p2name} ({p2choice})"
         if result == 2:
-            return f"{p2name} ({p2choice}) beats {p1name} ({p1choice})"
+            return f"you lose!! {p2name} ({p2choice}) beats {p1name} ({p1choice})"
         if result == 0:
             return f"{p1name} and {p2name} draw with {p1choice}"
         if result == None:
             return "unexpected error"
+
+
 
 
 
