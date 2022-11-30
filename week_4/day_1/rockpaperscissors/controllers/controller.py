@@ -9,27 +9,31 @@ import pdb
 def index():
     return render_template("index.html")
 
-# @app.route('/submitform/', methods=["POST"])
-# def play_game():
-#     rps=["rock", "paper","scissors"]
-#     results=request.form
-#     username=results["player_name"]
-#     userchoice=results["choice"]
-#     user_player = Player(username, userchoice)
-#     computerchoice=random.choice(rps)
-#     computer_player = Player("séamus", computerchoice)
-#     game = Game(user_player, computer_player)
-#     outcome = game.display_outcome()
-#     return render_template(
-#         'result.html',
-#         outcome = outcome,
-#         userchoice = userchoice, 
-#         computerchoice = computerchoice
-#         )
+@app.route('/hard')
+def hard():
+    return render_template("hard.html")
 
-#sneaky version
 @app.route('/submitform/', methods=["POST"])
 def play_game():
+    rps=["rock", "paper","scissors"]
+    results=request.form
+    username=results["player_name"]
+    userchoice=results["choice"]
+    user_player = Player(username, userchoice)
+    computerchoice=random.choice(rps)
+    computer_player = Player("séamus", computerchoice)
+    game = Game(user_player, computer_player)
+    outcome = game.display_outcome()
+    return render_template(
+        'result.html',
+        outcome = outcome,
+        userchoice = userchoice, 
+        computerchoice = computerchoice
+        )
+
+#sneaky version
+@app.route('/submitformhard/', methods=["POST"])
+def play_game_hard():
     rps=["rock", "paper","scissors"]
     results=request.form
     username=results["player_name"]

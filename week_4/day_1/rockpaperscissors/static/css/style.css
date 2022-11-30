@@ -3,7 +3,7 @@
     color: white;
     text-align: center;
     padding: 5rem;
-    filter:blur(0.5px)
+    filter:blur(0.1px)
 }
 
 body {
@@ -15,4 +15,8 @@ form {
     justify-content: center;
     gap: 4 rem;
     filter: blur(0)
+}
+
+a {
+    padding: 0
 }

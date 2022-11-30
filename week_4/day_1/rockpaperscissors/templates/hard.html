@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-    <form id = "player_1" action="/submitform/" method="post">
+    <form id = "player_1" action="/submitformhard/" method="post">
         <input type="text" placeholder="name" name="player_name" id="player_name">
         <select name="choice" id="choice">
             <option value="rock">rock</option>
@@ -12,6 +12,8 @@
         <p>
             game by séamus ryan
         </p>
-        <a href="/hard">hard mode</a>
+        <a href="/">normal</a>
     </footer>
+    
+    
 {% endblock %}
