@@ -21,17 +21,19 @@ class TestGame(unittest.TestCase):
         self.assertEqual(self.game_1.player_2.name, self.player_2.name)
 
     def test_calculate_outcome_draw(self):
-        output = self.game_2.calculate_outcome()
-        self.assertEqual(output, "draw")
+        output = self.game_2.display_outcome()
+        self.assertEqual(output, "niall and francis draw with paper")
 
     def test_calculate_outcome_rock_beats_scissors(self):
-        output = self.game_3.calculate_outcome()
+        output = self.game_3.display_outcome()
         self.assertEqual(output, "dave (rock) beats saoirse (scissors)")
 
     def test_calculate_outcome_paper_beats_rock(self):
-        output = self.game_1.calculate_outcome()
+        output = self.game_1.display_outcome()
         self.assertEqual(output, "niall (paper) beats dave (rock)")
 
     def test_calculate_outcome_scissors_beats_paper(self):
-        output = self.game_4.calculate_outcome()
+        output = self.game_4.display_outcome()
         self.assertEqual(output, "saoirse (scissors) beats niall (paper)")
+
+        # write tests for player position switched (pain in ass)

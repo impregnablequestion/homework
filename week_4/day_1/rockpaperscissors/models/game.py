@@ -6,33 +6,36 @@ class Game:
         self.players = [player_1]
     
     def calculate_outcome(self):
-        p1name = self.player_1.name
-        p1choice = self.player_1.choice
-        p2name = self.player_2.name
-        p2choice = self.player_2.choice
-        
+
         ints = {"rock":1, "paper":2, "scissors":3}
+        p1choice = ints[self.player_1.choice]
+        p2choice = ints[self.player_2.choice]
 
-        if self.player_1.choice == self.player_2.choice:
-            return "draw"
-        elif ints[self.player_1.choice] == ints[self.player_2.choice] + 1: #player1 is rock/paper and player2 is paper/scissors
-            return f"{self.player_1.name} ({self.player_1.choice}) beats {self.player_2.name} ({self.player_2.choice})"
-
-        elif ints[self.player_1.choice]== ints[self.player_2.choice] - 1: #player2 is rock/paper and player1 is paper/scissors
-            return f"{self.player_2.name} ({self.player_2.choice}) beats {self.player_1.name} ({self.player_1.choice})"
-
-        elif ints[self.player_1.choice] == ints[self.player_2.choice] - 2: #player 1 is rock and player_2 is scissors
-            return f"{self.player_1.name} ({self.player_1.choice}) beats {self.player_2.name} ({self.player_2.choice})"
-
-        elif ints[self.player_1.choice] == ints[self.player_2.choice] + 2: #player 1 is scissors and player_2 is rock
-            return f"{self.player_2.name} ({self.player_2.choice}) beats {self.player_1.name} ({self.player_1.choice})"
-        
+        if p1choice == p2choice:
+            return 0
+        elif p1choice == p2choice + 1 or p1choice == p2choice - 2:
+            return 1
+        elif p1choice == p2choice - 1 or p1choice == p2choice + 2:
+            return 2
         else:
-            return "unexpected input"
+            return None
 
     def display_outcome(self):
         result = self.calculate_outcome()
-        if result == player_1:
-            return f""
+
+        p1name = self.player_1.name
+        p2name = self.player_2.name
+        p1choice = self.player_1.choice
+        p2choice = self.player_2.choice
+    
+        if result == 1:
+            return f"{p1name} ({p1choice}) beats {p2name} ({p2choice})"
+        if result == 2:
+            return f"{p2name} ({p2choice}) beats {p1name} ({p1choice})"
+        if result == 0:
+            return f"{p1name} and {p2name} draw with {p1choice}"
+        if result == None:
+            return "unexpected error"
+
 
 
