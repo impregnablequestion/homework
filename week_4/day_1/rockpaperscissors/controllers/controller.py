@@ -18,6 +18,8 @@ def play_game():
     rps=["rock", "paper","scissors"]
     results=request.form
     username=results["player_name"]
+    if username == '':
+        username = "you"
     userchoice=results["choice"]
     user_player = Player(username, userchoice)
     computerchoice=random.choice(rps)
@@ -31,12 +33,14 @@ def play_game():
         computerchoice = computerchoice
         )
 
-#sneaky version
+#hard version
 @app.route('/submitformhard/', methods=["POST"])
 def play_game_hard():
     rps=["rock", "paper","scissors"]
     results=request.form
     username=results["player_name"]
+    if username == '':
+        username = "you"
     userchoice=results["choice"]
     user_player = Player(username, userchoice)
     compchoice = user_player.computer_choice(userchoice)
