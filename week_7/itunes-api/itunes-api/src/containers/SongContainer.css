@@ -1,0 +1,25 @@
+/* .song-container {
+    
+} */
+
+h1 {
+    padding: 3rem;
+    background-color: rgb(24, 35, 46), 0.3;
+    color: white;
+    margin: 0;
+}
+
+#dropdown-wrapper {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+select {
+    padding: 12px;
+    border-radius: 15px;
+}
+
