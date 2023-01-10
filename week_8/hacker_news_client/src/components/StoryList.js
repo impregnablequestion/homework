@@ -1,14 +1,18 @@
 import React from "react";
 import StoryDetail from "./StoryDetail";
 
-const StoryList = () => {
+const StoryList = ({stories, filter}) => {
+
+    const storiesList = stories.map((story, index) => {
+        return <StoryDetail story = {story} key={index} filter={filter}></StoryDetail>
+    })
 
     return(
         <>
-        <p>placeholder</p>
-        <StoryDetail></StoryDetail>
+        <ul>
+            {storiesList}
+        </ul>
         </>
-
     );
 
 }

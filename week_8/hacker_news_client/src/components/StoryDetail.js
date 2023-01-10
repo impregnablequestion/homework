@@ -1,9 +1,13 @@
 import React from "react";
 
-const StoryDetail = () => {
+const StoryDetail = ({story, filter}) => {
+
+    // const title = story.title
+
+    console.log(filter);
 
     return(
-        <p>detail</p>
+        <p>{story.title}</p>
     );
 
 }

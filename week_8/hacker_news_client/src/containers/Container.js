@@ -1,40 +1,35 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import SearchBar from "../components/SearchBar";
 import StoryList from "../components/StoryList";
 
 const Container = () => {
 
-    const [storyIDs, setStoryIDs] = useState([]);
     const [storyObjects, setStoryObjects] = useState([]);
+    const [textInput, setTextInput] = useState("");
 
     useEffect(() => {
         fetch("https://hacker-news.firebaseio.com/v0/topstories.json")
             .then(result => result.json())
-            .then(ids => setStoryIDs(ids));
-
+            .then(ids => {
+                const storyPromises = ids.slice(0,20).map(id => {
+                    return fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`).then(response=>response.json())
+                });
+                Promise.all(storyPromises)
+                    .then(objects => {
+                        setStoryObjects(objects)
+                    }
+            )
+        });
     }, [])
 
-    useEffect(() => {
-
-        const results = storyIDs.map((id)=>{
-            return fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
-                .then(response => response.json())
-        })
-
-        Promise.all(results)
-            .then(objects => {
-                setStoryObjects(objects);
-            })
-
-    }, [storyIDs])
-
-    console.log(storyObjects);
+    const handleInput = (event) => {
+        setTextInput(event.target.value);
+    }
 
     return(
         <div className="content">
-            <SearchBar></SearchBar>
-            <StoryList></StoryList>
+            <input type="text" onChange={handleInput} value={textInput}/>
+            <StoryList stories = {storyObjects} filter={textInput}></StoryList>
         </div>
     );
 
