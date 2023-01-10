@@ -14,7 +14,8 @@ const Container = () => {
             .then(result => result.json())
             .then(ids => {
                 const storyPromises = ids.slice(0,).map(id => {
-                    return fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`).then(response=>response.json())
+                    return fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
+                    .then(response=>response.json())
                 });
                 Promise.all(storyPromises)
                     .then(objects => {
@@ -34,7 +35,12 @@ const Container = () => {
 
     const fuzzyResults = storyObjects.map((story) => {
         const relevance = StringSimilarity(fuzzyTextInput, (story.title+story.by));
-        const storyObj = {name: story.title, author: story.by, time: story.time, url: story.url, relevance: relevance};
+        const storyObj = {
+            name: story.title,
+            author: story.by,
+            time: story.time,
+            url: story.url,
+            relevance: relevance};
         return storyObj;
     })
 
@@ -45,11 +51,15 @@ const Container = () => {
     );
 
     const clearFilter = storyObjects.filter((story) => {
-        return story.title.includes(clearTextInput)
+        return story.title.toLowerCase().includes(clearTextInput.toLowerCase())
     })
 
     const clearResults = clearFilter.map((story)=>{
-        return {name: story.title, author: story.by, time: story.time, url: story.url, relevance: 1};
+        return {name: story.title,
+            author: story.by,
+            time: story.time,
+            url: story.url,
+            relevance: 1};
     })
 
 
@@ -61,7 +71,7 @@ const Container = () => {
             
             <input type="text" onChange={handleClearInput} value={clearTextInput} placeholder="clear search"/>
             <StoryList stories = {clearResults} filter={clearTextInput}></StoryList>
-            
+
         </div>
     );
 
