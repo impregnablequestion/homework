@@ -6,7 +6,7 @@ import './SongContainer.css'
 const SongContainer = () => {
 
     const [songs, setSongs] = useState([]);
-    const [genre, setGenre] = useState("Rock");
+    const [genre, setGenre] = useState(null);
     
     useEffect(()=>{
         getSongs(genre);
