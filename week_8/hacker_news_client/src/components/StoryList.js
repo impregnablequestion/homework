@@ -1,15 +1,15 @@
 import React from "react";
 import StoryDetail from "./StoryDetail";
 
-const StoryList = ({stories, filter}) => {
+const StoryList = ({stories}) => {
 
     const storiesList = stories.map((story, index) => {
-        return <StoryDetail story = {story} key={index} filter={filter}></StoryDetail>
+        return <StoryDetail story = {story} key={index}></StoryDetail>
     })
 
     return(
         <>
-        <ul>
+        <ul className="stories">
             {storiesList}
         </ul>
         </>

@@ -1,14 +1,31 @@
 import React from "react";
 
-const StoryDetail = ({story, filter}) => {
+const StoryDetail = ({story, index}) => {
 
-    // const title = story.title
+    const date = new Date(story.time*1000); 
+    
+    const formattedDate = `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`
 
-    console.log(filter);
+    
+    console.log(story.relevance);
+
 
     return(
-        <p>{story.title}</p>
-    );
+        <>
+        {story.relevance > 0.1 ? <div className="story-container" id={index}>
+            {story.url ? <h3><a href={story.url}>{story.name}</a></h3> : <h3>{story.name}</h3>}
+
+            <li>{story.author}</li>
+            <li>{formattedDate}</li>
+        </div>
+        :
+        <div className="story-minimised" id={index}>
+            <h3>{story.name}</h3>
+        </div>
+        }
+        
+        </>
+    )
 
 }
 
