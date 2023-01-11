@@ -20,7 +20,7 @@ const StoryDetail = ({story, index}) => {
         </div>
         :
         <div className="story-minimised" id={index}>
-            <h3>{story.name}</h3>
+            {story.url ? <h3><a href={story.url}>{story.name}</a></h3> : <h3>{story.name}</h3>}
         </div>
         }
         

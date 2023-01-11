@@ -21,6 +21,11 @@ a:hover {
   font-size: 3px;
 }
 
+.story-minimised:hover {
+  font-size: 14px;
+  border-radius: 10px;
+}
+
 .stories {
   display:flex;
   flex-wrap: wrap;
