@@ -12,7 +12,7 @@ const StoryDetail = ({story, index}) => {
 
     return(
         <>
-        {story.relevance > 0.1 ? <div className="story-container" id={index}>
+        {story.relevance > 0.15 ? <div className="story-container" id={index}>
             {story.url ? <h3><a href={story.url}>{story.name}</a></h3> : <h3>{story.name}</h3>}
 
             <li>{story.author}</li>
