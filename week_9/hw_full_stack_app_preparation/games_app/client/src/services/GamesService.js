@@ -1,4 +1,4 @@
-const baseURL = 'http://localhost:9000/api/games/'
+const baseURL = 'http://localhost:9001/api/games/'
 
  const GamesService = {
   getGames() {
