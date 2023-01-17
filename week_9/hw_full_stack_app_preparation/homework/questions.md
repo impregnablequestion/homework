@@ -24,8 +24,8 @@ The fetch can take a second argument that defines the method, body, and headers 
 
 ## Which of the games API routes does the front-end application consume (i.e. make requests to)?
 
-"http://localhost:9000/api/games
+"http://localhost:9000/api/games a
 
 ## What are we using the MongoDB Driver for?
 
-To connect our application to the MongoDB database.
+To interact programmatically with the database
