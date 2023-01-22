@@ -25,12 +25,12 @@ const Container = () => {
         });
     }, [])
 
-    const handleFuzzyInput = (event) => {
-        setFuzzyTextInput(event.target.value);
-    }
-
     const handleClearInput = (event) => {
         setClearTextInput(event.target.value);
+    }
+
+    const handleFuzzyInput = (event) => {
+        setFuzzyTextInput(event.target.value);
     }
 
     const fuzzyResults = storyObjects.map((story) => {
@@ -68,6 +68,8 @@ const Container = () => {
 
             <input type="text" onChange={handleFuzzyInput} value={fuzzyTextInput} placeholder="fuzzy search"/>
             <StoryList stories = {fuzzyResults} filter={fuzzyTextInput}></StoryList>
+
+            <h1>clear filter</h1>
             
             <input type="text" onChange={handleClearInput} value={clearTextInput} placeholder="clear search"/>
             <StoryList stories = {clearResults} filter={clearTextInput}></StoryList>
